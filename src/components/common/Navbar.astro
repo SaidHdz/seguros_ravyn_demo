@@ -1,0 +1,44 @@
+---
+/**
+ * Minimalist Editorial Navbar.
+ * 
+ * Styled as a sleek floating capsule with clean borders and typography,
+ * avoiding generic SaaS navbars or AI slop.
+ */
+---
+
+<header class="w-full flex items-center justify-between py-2 px-2">
+  <!-- Brand Wordmark -->
+  <a href="#" class="flex items-center gap-2.5 group">
+    <div class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-black text-sm">
+      R
+    </div>
+    <div class="flex items-baseline gap-1.5">
+      <span class="text-base font-extrabold tracking-tight text-slate-900">RAVYN</span>
+      <span class="text-[11px] font-semibold text-slate-500 uppercase tracking-wider">Insurance</span>
+    </div>
+  </a>
+
+  <!-- Minimal Nav Links -->
+  <nav class="hidden md:flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-slate-600">
+    <a href="#plans" class="hover:text-slate-900 transition-colors">Coverage</a>
+    <a href="#why-us" class="hover:text-slate-900 transition-colors">Why Ravyn</a>
+    <a href="#quote-form" class="hover:text-slate-900 transition-colors">Get Quote</a>
+  </nav>
+
+  <!-- Action & Direct Phone -->
+  <div class="flex items-center gap-3">
+    <a
+      href="tel:8005550199"
+      class="hidden sm:inline-flex text-xs font-mono font-medium text-slate-600 hover:text-slate-900 transition-colors"
+    >
+      (800) 555-0199
+    </a>
+    <a
+      href="#quote-form"
+      class="inline-flex items-center justify-center px-4 py-2 text-xs font-bold text-slate-900 bg-white hover:bg-slate-100 border border-slate-300 rounded-full shadow-sm transition-all"
+    >
+      Request Quote
+    </a>
+  </div>
+</header>

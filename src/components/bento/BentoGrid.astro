@@ -1,0 +1,90 @@
+---
+/**
+ * Bento Grid Section with Perceptible Staggered Scroll Animations.
+ * 
+ * Each card appears with an observable 120ms staggered delay as the user scrolls,
+ * creating a deliberate, high-end editorial cascade.
+ */
+import BentoCard from './BentoCard.astro';
+---
+
+<section id="plans" class="w-full py-12 sm:py-18">
+  <div class="max-w-5xl mx-auto text-center">
+    
+    <!-- Editorial Headline (Reveal on scroll) -->
+    <div class="mb-10 sm:mb-14 max-w-2xl mx-auto reveal-on-scroll">
+
+      <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+        who needs this coverage?
+      </h2>
+      <p class="text-sm sm:text-base text-slate-600 mt-3 font-normal">
+        Explore independent policy comparison backed by Texas Department of Insurance licensing.
+      </p>
+    </div>
+
+    <!-- 6-Card Grid (3x2) with Staggered Entrance Classes -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 text-left mb-12">
+      
+      <!-- Card 1: Auto (Highlighted featured) -->
+      <BentoCard
+        category="VEHICLE"
+        title="Auto Insurance"
+        description="Comprehensive collision and roadside coverage. Texas drivers save an average of $420/yr by bundling."
+        isHighlighted={true}
+        delayClass="stagger-1"
+      />
+
+      <!-- Card 2: Home & Real Estate -->
+      <BentoCard
+        category="PROPERTY"
+        title="Home & Real Estate"
+        description="Full dwelling and structural protection against hail storms, wind damage, and property liabilities across Texas."
+        delayClass="stagger-2"
+      />
+
+      <!-- Card 3: Life -->
+      <BentoCard
+        category="FAMILY"
+        title="Life Insurance"
+        description="Guaranteed financial safety for loved ones. Fixed-rate term and indexed policies with zero medical exams."
+        delayClass="stagger-3"
+      />
+
+      <!-- Card 4: Health -->
+      <BentoCard
+        category="MEDICAL"
+        title="Health & Dental"
+        description="Transparent medical coverage without surprises. Direct access to major Texas PPO networks and prescription drugs."
+        delayClass="stagger-4"
+      />
+
+      <!-- Card 5: Commercial -->
+      <BentoCard
+        category="BUSINESS"
+        title="Commercial Liability"
+        description="Shield your business and commercial property from liabilities, equipment loss, and employee risk."
+        delayClass="stagger-5"
+      />
+
+      <!-- Card 6: Authority -->
+      <BentoCard
+        category="AUTHORITY"
+        title="15+ Years Experience"
+        description="Over $42M in claims settled. Direct independent brokerage with top-rated national carriers."
+        delayClass="stagger-6"
+      />
+
+    </div>
+
+    <!-- Capsule Button -->
+    <div class="flex justify-center reveal-on-scroll stagger-3">
+      <a
+        href="#quote-form"
+        class="inline-flex items-center justify-center px-10 py-4 rounded-full bg-slate-900 hover:bg-blue-600 text-white text-xs font-bold uppercase tracking-wider shadow-md hover:shadow-xl transition-all transform hover:-translate-y-1"
+      >
+        This Is For Me
+      </a>
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,90 @@
+---
+/**
+ * Master Editorial Layout with IntersectionObserver Scroll Animations.
+ * 
+ * Pairs Plus Jakarta Sans (Display) with Inter (Body). Includes an optimized
+ * IntersectionObserver script to trigger perceptible entrance animations as the user scrolls.
+ */
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Ravyn Seguros | Texas Licensed Insurance Advisory & Instant Quotes",
+  description = "Customized Life, Auto, Home, and Health insurance plans. Calculate your bundle savings and connect with an agent in 2 minutes."
+} = Astro.props;
+
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary Meta Tags -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/hero_agent.jpg" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Ravyn Seguros" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#ECEEF2" />
+    <link rel="canonical" href="https://ravynseguros.com" />
+
+    <!-- Dual Typography: Plus Jakarta Sans (Headlines) + Inter (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-[#ECEEF2] text-slate-900 min-h-screen antialiased selection:bg-blue-600 selection:text-white font-sans">
+    <div class="max-w-[1280px] mx-auto px-3 sm:px-6 py-3 sm:py-6 space-y-4 sm:space-y-6">
+      <slot />
+    </div>
+
+    <!-- Client-side scroll observer script for perceptible reveal animations -->
+    <script>
+      function setupScrollObserver() {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+              }
+            });
+          },
+          {
+            threshold: 0.1,
+            rootMargin: '0px 0px -40px 0px',
+          }
+        );
+
+        document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+          observer.observe(el);
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupScrollObserver);
+      } else {
+        setupScrollObserver();
+      }
+    </script>
+  </body>
+</html>

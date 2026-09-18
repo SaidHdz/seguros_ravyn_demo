@@ -1,0 +1,53 @@
+---
+/**
+ * Editorial Lead Capture Section.
+ * 
+ * Clean form-focused layout with editorial headline and bullet points.
+ * No tablet mockup, no AI artifacts.
+ */
+import LeadForm from './LeadForm';
+---
+
+<section id="quote-form" class="reveal-on-scroll w-full bg-[#05070B] rounded-[32px] sm:rounded-[44px] text-white p-6 sm:p-10 lg:p-14 shadow-2xl border border-white/5 my-6 overflow-hidden">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+    
+    <!-- Left Column: Copy & Bullets -->
+    <div class="lg:col-span-7 flex flex-col items-start justify-center">
+      
+      <h2 class="text-3xl sm:text-4xl lg:text-[48px] font-extrabold text-white tracking-tight leading-[1.1]">
+        take the step
+        <br />
+        and protect what matters
+      </h2>
+
+      <p class="text-sm sm:text-base text-slate-300 font-normal leading-relaxed mt-6 max-w-lg">
+        Connect with a licensed Texas agent who will compare rates from 14 carriers and find the best coverage for your household.
+      </p>
+
+      <!-- Clean Bullet Points -->
+      <div class="space-y-3 text-xs sm:text-sm text-slate-300 max-w-lg mt-8 font-normal">
+        <div class="flex items-start gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"></span>
+          <span>Compare personalized rates from 14 leading Texas carriers side-by-side.</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"></span>
+          <span>Unlock multi-policy bundling discounts averaging $540/year per household.</span>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-blue-500 mt-2 shrink-0"></span>
+          <span>Instant SMS confirmation sent directly to your phone in under two minutes.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Interactive Lead Form Island -->
+    <div class="lg:col-span-5 flex justify-center">
+      <div class="w-full max-w-md">
+        <LeadForm client:visible />
+      </div>
+    </div>
+
+  </div>
+</section>

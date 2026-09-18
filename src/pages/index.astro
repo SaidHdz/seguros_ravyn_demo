@@ -1,0 +1,32 @@
+---
+/**
+ * Ravyn Seguros Demo - Editorial Landing Page ($800+ Agency Tier).
+ * 
+ * Styled strictly to the European high-end editorial benchmark (Behance reference).
+ * Features seamless black hero photography, rich insurance products, interactive
+ * real-time savings calculator, and photorealistic tablet quotation review.
+ */
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/common/Navbar.astro';
+import Hero from '../components/hero/Hero.astro';
+import BentoGrid from '../components/bento/BentoGrid.astro';
+import SavingsCalculator from '../components/calculator/SavingsCalculator';
+import LeadMachine from '../components/leads/LeadMachine.astro';
+import Footer from '../components/common/Footer.astro';
+---
+
+<Layout
+  title="Ravyn Seguros | Texas Licensed Insurance Advisory & Instant Quotes"
+  description="Customized Life, Auto, Home, and Health insurance plans. Calculate your bundle savings and connect with an agent in 2 minutes."
+>
+  <Navbar />
+  
+  <main class="space-y-6 sm:space-y-8">
+    <Hero />
+    <BentoGrid />
+    <SavingsCalculator client:visible />
+    <LeadMachine />
+  </main>
+
+  <Footer />
+</Layout>
